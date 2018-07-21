@@ -13,6 +13,9 @@ MemAdmin v 1.0.11
  BUGs Report : junstor@gmail.com
 
  Changelog :
+ v1.0.13 -- 2018/7/21
+   * connect data save in remote file @One2r
+
  v1.0.12 -- 2012/8/15
    * fix a refer bux
 
