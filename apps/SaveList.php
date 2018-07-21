@@ -5,8 +5,12 @@
 date_default_timezone_set('Asia/Shanghai');
 try {
 	$list = $_POST['data'];
-	$serlist = json_encode($list);
-	file_put_contents("conn.json",$serlist);
+	$data = [
+		"connections"=>$list,
+		"savetime"=>date('Y-m-d H:i:s')
+	];
+	$serdata = json_encode($data);
+	file_put_contents("conn.json",$serdata);
 	echo "OK";
 } 
 catch (Exception $e) {

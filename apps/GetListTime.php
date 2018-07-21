@@ -3,10 +3,13 @@
  * get list save time
  */
 header("Cache-Control: no-cache, must-revalidate");
-date_default_timezone_set('Asia/Shanghai');
-if (isset($_COOKIE['memadmin_cookie_conlist_time'])) {
-	$time = ($_COOKIE['memadmin_cookie_conlist_time']);
-	echo date('Y-m-d H:i:s', $time);
+ if (file_exists("conn.json")) {
+	$res = json_decode(file_get_contents("conn.json"),true);
+	if(!empty($res) && isset($res['savetime'])){
+		echo $res['savetime'];
+	}else{
+		echo "notime";
+	}
 } else {
 	echo "notime";
 } 
